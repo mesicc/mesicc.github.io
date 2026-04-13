@@ -6,18 +6,13 @@
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 // --- Mobile menu ---
 function toggleMobile() {
   const menu = document.getElementById('mobile-menu');
   const isOpen = menu.classList.contains('open');
-
   if (isOpen) {
     closeMobile();
   } else {
@@ -31,47 +26,40 @@ function closeMobile() {
   navbar.classList.remove('menu-open');
 }
 
-// Zatvori meni klikom izvan njega
 document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target)) {
-    closeMobile();
-  }
+  if (!navbar.contains(e.target)) closeMobile();
 });
 
-// --- i18n ---
-let currentLang = 'en';
+// --- Mouse gradient ---
+(function () {
+  const el = document.getElementById('mouse-gradient');
+  if (!el) return;
+  let mx = 50, my = 50, cx = 50, cy = 50;
 
-const i18n = {
-  en: {
-    langLabel: 'BS',
-    navCta: 'Work with me',
-  },
-  bs: {
-    langLabel: 'EN',
-    navCta: 'Sarađujmo',
-  }
-};
+  window.addEventListener('mousemove', e => {
+    mx = (e.clientX / window.innerWidth) * 100;
+    my = (e.clientY / window.innerHeight) * 100;
+  });
 
-function toggleLang() {
-  currentLang = currentLang === 'en' ? 'bs' : 'en';
-  applyLang();
-}
+  (function animate() {
+    cx += (mx - cx) * 0.04;
+    cy += (my - cy) * 0.04;
+    el.style.background = `radial-gradient(ellipse 800px 600px at ${cx}% ${cy}%, hsl(255 85% 63% / 0.07) 0%, hsl(185 90% 55% / 0.03) 40%, transparent 70%)`;
+    requestAnimationFrame(animate);
+  })();
+})();
 
-function applyLang() {
-  const t = i18n[currentLang];
+// --- Scroll reveal (fade-up) ---
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-  // Lang label (desktop + mobile)
-  const desktopLabel = document.getElementById('lang-label');
-  const mobileLabel  = document.getElementById('lang-label-mobile');
-  if (desktopLabel) desktopLabel.textContent = t.langLabel;
-  if (mobileLabel)  mobileLabel.textContent  = t.langLabel;
-
-  // CTA
-  const navCta    = document.getElementById('nav-cta');
-  const mobileCta = document.getElementById('mobile-cta');
-  if (navCta)    navCta.textContent    = t.navCta;
-  if (mobileCta) mobileCta.textContent = t.navCta;
-}
+document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
 
 // --- Smooth scroll ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -84,34 +72,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===========================================
-// HERO — dodaj u main.js (u i18n objekat i applyLang funkciju)
-// ===========================================
+// --- i18n ---
+let currentLang = 'en';
 
-// U i18n.en objekt dodaj:
-// heroTag: 'Web Developer · EE Student',
-// heroL1: 'Engineering', heroL2: 'Digital', heroL3: 'Experiences.',
-// heroSub: 'Based in Sarajevo, crafting robust web solutions.',
-// heroCta: 'Work with me', heroProjects: 'View Projects',
+const i18n = {
+  en: {
+    langLabel: 'BS', navCta: 'Work with me',
+    heroTag: 'Web Developer · EE Student',
+    heroL1: 'Engineering', heroL2: 'Digital', heroL3: 'Experiences.',
+    heroSub: 'Based in Sarajevo, crafting robust web solutions.',
+    heroCta: 'Work with me', heroProjects: 'View Projects',
+  },
+  bs: {
+    langLabel: 'EN', navCta: 'Sarađujmo',
+    heroTag: 'Web Developer · Student EE',
+    heroL1: 'Inženjering', heroL2: 'Digitalnih', heroL3: 'Iskustava.',
+    heroSub: 'Iz Sarajeva, kreiram robusna web rješenja.',
+    heroCta: 'Sarađujmo', heroProjects: 'Pogledaj projekte',
+  }
+};
 
-// U i18n.bs objekt dodaj:
-// heroTag: 'Web Developer · Student EE',
-// heroL1: 'Inženjering', heroL2: 'Digitalnih', heroL3: 'Iskustava.',
-// heroSub: 'Iz Sarajeva, kreiram robusna web rješenja.',
-// heroCta: 'Sarađujmo', heroProjects: 'Pogledaj projekte',
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'bs' : 'en';
+  applyLang();
+}
 
-// U applyLang() funkciju dodaj:
-// const heroTag = document.getElementById('hero-tag');
-// if (heroTag) heroTag.textContent = t.heroTag;
-// const heroL1 = document.getElementById('hero-l1');
-// if (heroL1) heroL1.textContent = t.heroL1;
-// const heroL2 = document.getElementById('hero-l2');
-// if (heroL2) heroL2.textContent = t.heroL2;
-// const heroL3 = document.getElementById('hero-l3');
-// if (heroL3) heroL3.textContent = t.heroL3;
-// const heroSub = document.getElementById('hero-sub');
-// if (heroSub) heroSub.textContent = t.heroSub;
-// const heroCta = document.getElementById('hero-cta');
-// if (heroCta) heroCta.textContent = t.heroCta;
-// const heroProjects = document.getElementById('hero-projects');
-// if (heroProjects) heroProjects.textContent = t.heroProjects;
+function applyLang() {
+  const t = i18n[currentLang];
+  const ids = {
+    'lang-label': t.langLabel, 'lang-label-mobile': t.langLabel,
+    'nav-cta': t.navCta, 'mobile-cta': t.navCta,
+    'hero-tag': t.heroTag, 'hero-l1': t.heroL1,
+    'hero-l2': t.heroL2, 'hero-l3': t.heroL3,
+    'hero-sub': t.heroSub, 'hero-cta': t.heroCta,
+    'hero-projects': t.heroProjects,
+  };
+  Object.entries(ids).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  });
+}

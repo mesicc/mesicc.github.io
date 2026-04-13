@@ -146,3 +146,27 @@
     width: 384px;            /* xl:w-[24rem] */
   }
 }
+
+/* ===================== ABOUT — responzivnost.css ===================== */
+
+@media (min-width: 640px) {
+  .about-container { padding: 0 3rem; }
+}
+
+@media (min-width: 768px) {
+  .about-container { padding: 0 4rem; }
+  .about-title { font-size: 3rem; }
+}
+
+@media (min-width: 1024px) {
+  .about-container { padding: 0 5rem; }
+  .about-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .bio-card    { grid-column: span 7; }
+  .skills-card { grid-column: span 5; }
+}
+
+@media (min-width: 1280px) {
+  .about-container { padding: 0 8rem; }
+}
