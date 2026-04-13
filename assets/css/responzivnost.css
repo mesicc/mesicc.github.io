@@ -43,3 +43,106 @@
 @media (min-width: 1536px) {
   .nav-inner { padding-left: 14rem; padding-right: 14rem; }
 }
+
+/* ===========================================
+   HERO — dodaj na kraj responzivnost.css
+   =========================================== */
+
+/* sm: ≥640px */
+@media (min-width: 640px) {
+  .hero-container {
+    padding-left: 3rem;      /* px-12 = 48px */
+    padding-right: 3rem;
+    gap: 2rem;
+  }
+  .hero-tag {
+    font-size: 0.875rem;     /* sm:text-sm */
+    margin-bottom: 1.5rem;   /* sm:mb-6 */
+  }
+  .hero-heading {
+    font-size: 3rem;         /* sm:text-5xl = 48px */
+    margin-bottom: 1.5rem;
+  }
+  .hero-sub {
+    font-size: 1.125rem;     /* sm:text-lg */
+    margin-bottom: 2.5rem;   /* sm:mb-10 */
+  }
+  .hero-buttons {
+    flex-direction: row;     /* sm:flex-row */
+    gap: 1rem;               /* sm:gap-4 */
+    align-items: center;
+  }
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    padding: 1rem 2rem;      /* sm:py-4 sm:px-8 */
+    font-size: 1rem;         /* sm:text-base */
+  }
+  .hero-img {
+    width: 240px;            /* sm:w-60 */
+  }
+  .hero-scroll {
+    bottom: 2.5rem;          /* sm:bottom-10 */
+  }
+}
+
+/* md: ≥768px */
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 3.75rem;      /* md:text-6xl = 60px */
+  }
+  .hero-sub {
+    font-size: 1.25rem;      /* md:text-xl */
+  }
+  .hero-img {
+    width: 288px;            /* md:w-72 */
+  }
+}
+
+/* lg: ≥1024px — desktop layout */
+@media (min-width: 1024px) {
+  .hero-container {
+    flex-direction: row;     /* lg:flex-row */
+    padding-left: 5rem;      /* px-20 = 80px */
+    padding-right: 5rem;
+    padding-top: 0;          /* lg:pt-0 */
+    padding-bottom: 0;       /* lg:pb-0 */
+    gap: 3rem;               /* lg:gap-12 */
+  }
+  /* Tekst: lijevo, poravnanje lijevo */
+  .hero-text {
+    order: 1;
+    text-align: left;
+    flex: 1;
+  }
+  .hero-sub {
+    margin-left: 0;          /* lg:mx-0 */
+    margin-right: 0;
+  }
+  .hero-buttons {
+    justify-content: flex-start; /* lg:justify-start */
+  }
+  /* Slika: desno */
+  .hero-image-wrap {
+    order: 2;
+  }
+  .hero-heading {
+    font-size: 4.5rem;       /* lg:text-7xl = 72px */
+  }
+  .hero-img {
+    width: 320px;            /* lg:w-[20rem] */
+  }
+}
+
+/* xl: ≥1280px */
+@media (min-width: 1280px) {
+  .hero-container {
+    padding-left: 8rem;      /* px-32 = 128px */
+    padding-right: 8rem;
+  }
+  .hero-heading {
+    font-size: 6rem;         /* xl:text-8xl = 96px */
+  }
+  .hero-img {
+    width: 384px;            /* xl:w-[24rem] */
+  }
+}

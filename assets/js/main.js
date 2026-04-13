@@ -83,3 +83,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ===========================================
+// HERO — dodaj u main.js (u i18n objekat i applyLang funkciju)
+// ===========================================
+
+// U i18n.en objekt dodaj:
+// heroTag: 'Web Developer · EE Student',
+// heroL1: 'Engineering', heroL2: 'Digital', heroL3: 'Experiences.',
+// heroSub: 'Based in Sarajevo, crafting robust web solutions.',
+// heroCta: 'Work with me', heroProjects: 'View Projects',
+
+// U i18n.bs objekt dodaj:
+// heroTag: 'Web Developer · Student EE',
+// heroL1: 'Inženjering', heroL2: 'Digitalnih', heroL3: 'Iskustava.',
+// heroSub: 'Iz Sarajeva, kreiram robusna web rješenja.',
+// heroCta: 'Sarađujmo', heroProjects: 'Pogledaj projekte',
+
+// U applyLang() funkciju dodaj:
+// const heroTag = document.getElementById('hero-tag');
+// if (heroTag) heroTag.textContent = t.heroTag;
+// const heroL1 = document.getElementById('hero-l1');
+// if (heroL1) heroL1.textContent = t.heroL1;
+// const heroL2 = document.getElementById('hero-l2');
+// if (heroL2) heroL2.textContent = t.heroL2;
+// const heroL3 = document.getElementById('hero-l3');
+// if (heroL3) heroL3.textContent = t.heroL3;
+// const heroSub = document.getElementById('hero-sub');
+// if (heroSub) heroSub.textContent = t.heroSub;
+// const heroCta = document.getElementById('hero-cta');
+// if (heroCta) heroCta.textContent = t.heroCta;
+// const heroProjects = document.getElementById('hero-projects');
+// if (heroProjects) heroProjects.textContent = t.heroProjects;
