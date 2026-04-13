@@ -4,277 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kemal Mešić — Web Developer</title>
-  <meta name="description" content="Kemal Mešić — Web Developer and EE Student based in Sarajevo. Building scalable, high-performance web applications." />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responzivnost.css">
 </head>
 <body>
 
-  <!-- Mouse gradient overlay -->
-  <div id="mouse-gradient"></div>
+	<!-- ===================== NAVBAR ===================== -->
+	<nav class="navbar" id="navbar">
+		<div class="nav-inner">
 
-  <!-- ========== NAVBAR ========== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-avatar">
-          <img src="assets/images/logo.webp" alt="Kemal Mešić" class="nav-avatar-img" />
-        </div>
-        <span class="logo-text"><span class="gradient-text">KM</span><span>.</span></span>
-      </a>
+			<!-- Logo -->
+			<a href="#" class="nav-logo">
+				<div class="nav-avatar-wrap">
+					<img src="assets/images/logo.webp" alt="KM" class="nav-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+					<div class="nav-avatar-fallback" style="display:none">KM</div>
+				</div>
+				<span class="nav-logo-text">
+					<span class="gradient-text">KM</span><span class="nav-logo-dot">.</span>
+				</span>
+			</a>
 
-      <div class="nav-links">
-        <a href="#about" data-i18n="navAbout">About</a>
-        <a href="#projects" data-i18n="navProjects">Projects</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
-        <button id="lang-toggle-desktop" class="lang-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span id="lang-label-desktop">BS</span>
-        </button>
-        <a href="#contact" class="nav-cta" data-i18n="navCta">Work with me</a>
-      </div>
+			<!-- Desktop nav (md+) -->
+			<div class="nav-desktop">
+				<div class="nav-links">
+					<a href="#about" class="nav-link">About</a>
+					<a href="#projects" class="nav-link">Projects</a>
+					<a href="#contact" class="nav-link">Contact</a>
+				</div>
+				<button class="nav-lang" onclick="toggleLang()" aria-label="Toggle language">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="10"/>
+					<line x1="2" y1="12" x2="22" y2="12"/>
+					<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+					</svg>
+					<span id="lang-label">BS</span>
+				</button>
+				<a href="#contact" class="nav-cta" id="nav-cta">Work with me</a>
+			</div>
 
-      <div class="nav-mobile-controls">
-        <button id="lang-toggle-mobile" class="lang-btn lang-btn-sm">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span id="lang-label-mobile">BS</span>
-        </button>
-        <button id="mobile-menu-btn" aria-label="Toggle menu">
-          <svg id="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-          <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
+			<!-- Mobile controls (< md) -->
+			<div class="nav-mobile-controls">
+				<button class="nav-lang nav-lang-mobile" onclick="toggleLang()" aria-label="Toggle language">
+					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="10"/>
+					<line x1="2" y1="12" x2="22" y2="12"/>
+					<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+					</svg>
+					<span id="lang-label-mobile">BS</span>
+				</button>
+				<button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Toggle menu">
+					<!-- Hamburger icon -->
+					<svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+					<line x1="3" y1="6" x2="21" y2="6"/>
+					<line x1="3" y1="12" x2="21" y2="12"/>
+					<line x1="3" y1="18" x2="21" y2="18"/>
+					</svg>
+					<!-- X icon -->
+					<svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+					<line x1="18" y1="6" x2="6" y2="18"/>
+					<line x1="6" y1="6" x2="18" y2="18"/>
+					</svg>
+				</button>
+			</div>
+		</div>
 
-    <div id="mobile-menu" class="mobile-menu" style="display:none">
-      <a href="#about" data-i18n="navAbout">About</a>
-      <a href="#projects" data-i18n="navProjects">Projects</a>
-      <a href="#contact" data-i18n="navContact">Contact</a>
-      <a href="#contact" class="nav-cta mobile-cta" data-i18n="navCta">Work with me</a>
-    </div>
-  </nav>
+		<!-- Mobile menu panel -->
+		<div class="nav-mobile-menu glass" id="mobile-menu">
+			<a href="#about" class="nav-mobile-link" onclick="closeMobile()">About</a>
+			<a href="#projects" class="nav-mobile-link" onclick="closeMobile()">Projects</a>
+			<a href="#contact" class="nav-mobile-link" onclick="closeMobile()">Contact</a>
+			<a href="#contact" class="nav-mobile-cta" id="mobile-cta" onclick="closeMobile()">Work with me</a>
+		</div>
+	</nav>
 
-  <!-- ========== HERO ========== -->
-  <section id="hero" class="hero">
-    <div class="dot-pattern"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-
-    <div class="container hero-content">
-      <div class="hero-flex">
-        <div class="hero-text fade-up">
-          <p class="hero-tag" data-i18n="heroTag">Web Developer · EE Student</p>
-          <h1 class="hero-heading">
-            <span data-i18n="heroLine1">Engineering</span><br />
-            <span class="gradient-text" data-i18n="heroLine2">Digital</span><br />
-            <span data-i18n="heroLine3">Experiences.</span>
-          </h1>
-          <p class="hero-sub" data-i18n="heroSub">Based in Sarajevo, crafting robust web solutions.</p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn-primary" data-i18n="heroCta">Work with me</a>
-            <a href="#projects" class="btn-outline" data-i18n="heroProjects">View Projects</a>
-          </div>
-        </div>
-        <div class="hero-image fade-up">
-          <div class="hero-image-glow"></div>
-          <img src="assets/images/hero.webp" alt="Kemal Mešić" class="hero-photo" />
-        </div>
-      </div>
-      <div class="scroll-indicator fade-up">
-        <a href="#about">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header fade-up">
-        <p class="section-label" data-i18n="aboutLabel">About</p>
-        <h2 class="section-title"><span data-i18n="aboutTitle1">Who I </span><span class="gradient-text" data-i18n="aboutTitle2">Am</span></h2>
-      </div>
-
-      <div class="about-grid">
-        <!-- Bio card -->
-        <div class="bento-card about-bio fade-up">
-          <div class="about-bio-glow"></div>
-          <div class="about-bio-header">
-            <div>
-              <h3 class="about-name">Kemal Mešić</h3>
-              <p class="about-role">Web Developer</p>
-            </div>
-            <div class="about-location">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-accent"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Sarajevo, BiH</span>
-            </div>
-          </div>
-          <p class="about-bio-text" id="about-bio-text">
-            I'm a Web Developer and Electrical Engineering student at the <span class="text-accent">Faculty of Electrical Engineering (ETF), University of Sarajevo</span>. I focus on building scalable, high-performance web applications with modern technologies. My engineering background gives me a systematic approach to problem-solving, ensuring every project is built with precision and purpose.
-          </p>
-          <div class="about-edu">
-            <div class="about-edu-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-accent"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
-            </div>
-            <div>
-              <p class="about-edu-name">ETF Sarajevo</p>
-              <p class="about-edu-sub">Electrical Engineering Student</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skills card -->
-        <div class="bento-card about-skills fade-up">
-          <h3 class="skills-title">
-            <span class="skills-bar"></span>
-            Skills &amp; Technologies
-          </h3>
-          <div class="skills-list">
-            <div class="skill-group"><p class="skill-cat">Frontend</p><p class="skill-items">HTML, CSS, JavaScript</p></div>
-            <div class="skill-group"><p class="skill-cat">Frameworks</p><p class="skill-items">ReactJS, NextJS</p></div>
-            <div class="skill-group"><p class="skill-cat">Backend</p><p class="skill-items">PHP, NodeJs</p></div>
-            <div class="skill-group"><p class="skill-cat">Database</p><p class="skill-items">MySQL</p></div>
-            <div class="skill-group"><p class="skill-cat">UI Libraries</p><p class="skill-items">MUI, Tailwind, Bootstrap</p></div>
-            <div class="skill-group"><p class="skill-cat">SEO &amp; Analytics</p><p class="skill-items">Google Analytics, Search Console, SEMrush, Google PageSpeed</p></div>
-            <div class="skill-group"><p class="skill-cat">Other</p><p class="skill-items">i18n</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROJECTS ========== -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-header fade-up">
-        <p class="section-label" data-i18n="projectsLabel">Work</p>
-        <h2 class="section-title"><span data-i18n="projectsTitle1">Featured </span><span class="gradient-text" data-i18n="projectsTitle2">Projects</span></h2>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <a href="https://unapiratesrafting.com" target="_blank" rel="noopener noreferrer" class="bento-card project-card fade-up">
-          <div class="project-image">
-            <img src="assets/images/project-una.webp" alt="Una Pirates Rafting" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="project-img-placeholder" style="display:none">Una Pirates Rafting</div>
-            <div class="project-overlay">
-              <h3 class="project-overlay-title" data-i18n="project1Title">Una Pirates Rafting</h3>
-              <div class="project-techs">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>i18n</span>
-              </div>
-              <span class="project-visit"><span data-i18n="visitSite">Visit Site</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title" data-i18n="project1Title">Una Pirates Rafting</h3>
-            <p class="project-desc" data-i18n="project1Desc">A full-featured adventure booking platform for rafting on the Una river. Multi-language support, route booking, and accommodation management.</p>
-          </div>
-        </a>
-
-        <!-- Project 2 -->
-        <a href="https://blackboxbihac.ba" target="_blank" rel="noopener noreferrer" class="bento-card project-card fade-up">
-          <div class="project-image">
-            <img src="assets/images/project-blackbox.webp" alt="Black Box Bihać" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="project-img-placeholder" style="display:none">Black Box Bihać</div>
-            <div class="project-overlay">
-              <h3 class="project-overlay-title" data-i18n="project2Title">Black Box Bihać</h3>
-              <div class="project-techs">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
-              </div>
-              <span class="project-visit"><span data-i18n="visitSite">Visit Site</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title" data-i18n="project2Title">Black Box Bihać</h3>
-            <p class="project-desc" data-i18n="project2Desc">A premium CrossFit gym showcase with dark-mode design, program listings, gallery, and membership registration.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-header fade-up">
-        <p class="section-label" data-i18n="contactLabel">Contact</p>
-        <h2 class="section-title"><span data-i18n="contactTitle1">Let's </span><span class="gradient-text" data-i18n="contactTitle2">Talk</span></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info fade-up">
-          <p class="contact-intro" data-i18n="contactIntro">Have a project in mind or want to collaborate? Feel free to reach out — I'd love to hear from you.</p>
-
-          <div class="contact-links">
-            <a href="tel:+38762546564" class="contact-link">
-              <div class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <p class="contact-link-label" data-i18n="contactPhone">Phone</p>
-                <p class="contact-link-value">+387 62 546 564</p>
-              </div>
-            </a>
-            <a href="mailto:kemalmesic26@gmail.com" class="contact-link">
-              <div class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </div>
-              <div>
-                <p class="contact-link-label" data-i18n="contactEmail">Email</p>
-                <p class="contact-link-value"><span class="__cf_email__" data-cfemail="99f1fcf5f5f6d9f2fcf4f8f5f4fceaf0fab7fdfcef">kemalmesic26@gmail.com</span></p>
-              </div>
-            </a>
-          </div>
-
-          <div class="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <form id="contact-form" class="bento-card contact-form fade-up">
-          <div class="form-group">
-            <label data-i18n="formName">Name</label>
-            <input type="text" name="name" required data-placeholder-i18n="formNamePlaceholder" placeholder="Your name" />
-          </div>
-          <div class="form-group">
-            <label data-i18n="formEmail">Email</label>
-            <input type="email" name="email" required data-placeholder-i18n="formEmailPlaceholder" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label data-i18n="formMessage">Message</label>
-            <textarea name="message" rows="4" required data-placeholder-i18n="formMessagePlaceholder" placeholder="Tell me about your project..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-full" data-i18n="formSend">
-            Send Message
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="m22 2-11 11"/></svg>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="footer-year"></span> Kemal Mešić. <span data-i18n="footerRights">All rights reserved.</span></p>
-      <p>Built with <span class="gradient-text" data-i18n="footerBuilt">precision</span>.</p>
-    </div>
-  </footer>
-
-  <!-- WhatsApp button -->
-  <a href="https://wa.me/38762541315" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-  </a>
-
-  
-  <div id="toast" class="toast" style="display:none"></div>
-
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

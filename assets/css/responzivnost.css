@@ -1,0 +1,45 @@
+/* ===========================================
+   responzivnost.css — Kemal Mešić Portfolio
+   =========================================== */
+
+/* ===========================================
+   NAVBAR — hamburger vs desktop nav
+   Hamburger: mobile + tablet (<1280px)
+   Desktop nav: samo na xl+ (≥1280px)
+   =========================================== */
+@media (max-width: 1279px) {
+  .nav-desktop         { display: none !important; }
+  .nav-mobile-controls { display: flex !important; }
+}
+
+@media (min-width: 1280px) {
+  .nav-desktop         { display: flex !important; }
+  .nav-mobile-controls { display: none !important; }
+  .nav-mobile-menu     { display: none !important; }
+}
+
+/* ===========================================
+   NAVBAR — horizontalni padding
+   =========================================== */
+
+/* mobile default (style.css): 1.5rem = 24px */
+
+@media (min-width: 640px) {
+  .nav-inner { padding-left: 3rem;  padding-right: 3rem; }
+}
+
+@media (min-width: 768px) {
+  .nav-inner { padding-left: 4rem;  padding-right: 4rem; }
+}
+
+@media (min-width: 1024px) {
+  .nav-inner { padding-left: 6rem;  padding-right: 6rem; }
+}
+
+@media (min-width: 1280px) {
+  .nav-inner { padding-left: 10rem; padding-right: 10rem; }
+}
+
+@media (min-width: 1536px) {
+  .nav-inner { padding-left: 14rem; padding-right: 14rem; }
+}
