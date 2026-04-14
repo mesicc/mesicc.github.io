@@ -170,3 +170,23 @@
 @media (min-width: 1280px) {
   .about-container { padding: 0 8rem; }
 }
+
+/* ===================== PROJECTS — responzivnost.css ===================== */
+
+@media (min-width: 640px) {
+  .projects-container { padding: 0 3rem; }
+}
+
+@media (min-width: 768px) {
+  .projects-container { padding: 0 4rem; }
+  .projects-title { font-size: 3rem; }
+}
+
+@media (min-width: 1024px) {
+  .projects-container { padding: 0 5rem; }
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1280px) {
+  .projects-container { padding: 0 8rem; }
+}

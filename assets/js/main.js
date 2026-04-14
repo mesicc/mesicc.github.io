@@ -112,3 +112,14 @@ function applyLang() {
     if (el) el.textContent = val;
   });
 }
+
+// --- Project cards touch toggle (mobile) ---
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', function (e) {
+    if (e.target.closest('.project-visit')) return;
+    this.classList.toggle('touch-active');
+    document.querySelectorAll('.project-card').forEach(other => {
+      if (other !== this) other.classList.remove('touch-active');
+    });
+  });
+});
