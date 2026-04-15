@@ -155,7 +155,7 @@
 
 @media (min-width: 768px) {
   .about-container { padding: 0 4rem; }
-  .about-title { font-size: 3rem; }
+  .about-title     { font-size: 3rem; }
 }
 
 @media (min-width: 1024px) {
