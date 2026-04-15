@@ -190,3 +190,29 @@
 @media (min-width: 1280px) {
   .projects-container { padding: 0 8rem; }
 }
+
+
+/* ===================== CONTACT ===================== */
+
+@media (min-width: 640px) {
+  .contact-container { padding: 0 3rem; }
+  .footer-container  { padding: 0 3rem; }
+}
+
+@media (min-width: 768px) {
+  .contact-container { padding: 0 4rem; }
+  .footer-container  { padding: 0 4rem; }
+  .contact-title     { font-size: 3rem; }
+  .footer-container  { flex-direction: row; }
+}
+
+@media (min-width: 1024px) {
+  .contact-container { padding: 0 5rem; }
+  .footer-container  { padding: 0 5rem; }
+  .contact-grid      { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1280px) {
+  .contact-container { padding: 0 8rem; }
+  .footer-container  { padding: 0 8rem; }
+}

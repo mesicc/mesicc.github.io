@@ -922,3 +922,235 @@ body {
 .project-card.touch-active .project-overlay { opacity: 1; pointer-events: auto; }
 .project-card.touch-active .project-img    { transform: scale(1.05); }
 .project-card.touch-active .project-name   { color: hsl(255 85% 63%); }
+
+/* ===================== CONTACT ===================== */
+
+.contact-section {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-header {
+  margin-bottom: 4rem;
+}
+
+.contact-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: hsl(210 20% 92%);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Lijeva kolona */
+/* .contact-info {} */
+
+.contact-intro {
+  font-size: 1.125rem;
+  color: hsl(215 15% 55%);
+  line-height: 1.7;
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: hsl(210 20% 92%);
+  transition: color 0.2s;
+}
+.contact-link:hover { color: hsl(255 85% 63%); }
+
+.contact-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: hsl(255 85% 63% / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(255 85% 63%);
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.contact-link:hover .contact-icon-box {
+  background: hsl(255 85% 63% / 0.2);
+}
+
+.contact-link-label {
+  font-size: 0.75rem;
+  color: hsl(215 15% 55%);
+  margin-bottom: 0.125rem;
+}
+
+.contact-link-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.social-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: hsl(220 14% 16%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(215 15% 55%);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.social-btn:hover {
+  background: hsl(255 85% 63% / 0.1);
+  color: hsl(255 85% 63%);
+}
+
+/* Desna kolona — forma */
+.contact-form-card {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(215 15% 55%);
+  margin-bottom: 0.375rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: hsl(220 14% 16%);
+  border: 1px solid hsl(220 14% 18%);
+  color: hsl(210 20% 92%);
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: hsl(215 15% 45%);
+}
+.form-input:focus,
+.form-textarea:focus {
+  border-color: hsl(255 85% 63% / 0.5);
+  box-shadow: 0 0 0 3px hsl(255 85% 63% / 0.1);
+}
+
+.form-textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  background: hsl(255 85% 63%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.form-submit:hover { opacity: 0.9; }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+  border-top: 1px solid hsl(220 14% 18%);
+  padding: 2rem 0;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: hsl(215 15% 55%);
+}
+
+.footer-built {
+  font-weight: 500;
+}
+
+/* ===================== WHATSAPP ===================== */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.whatsapp-btn:hover {
+  background: #1ebe57;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
