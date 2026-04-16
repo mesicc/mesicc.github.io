@@ -163,6 +163,7 @@ const i18n = {
 
     // Footer
     footerRights:   'All rights reserved.',
+    footerTxt:      'Built with',
     footerBuilt:    'precision',
   },
 
@@ -226,6 +227,7 @@ const i18n = {
 
     // Footer
     footerRights:   'Sva prava zadržana.',
+    footerTxt:      'Napravljeno sa',
     footerBuilt:    'preciznošću',
   }
 };
