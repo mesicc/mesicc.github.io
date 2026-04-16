@@ -11,11 +11,8 @@
 <body>
 	<div id="mouse-gradient"></div>
 
-	<!-- ===================== NAVBAR ===================== -->
 	<nav class="navbar" id="navbar">
 		<div class="nav-inner">
-
-			<!-- Logo -->
 			<a href="#" class="nav-logo">
 				<div class="nav-avatar-wrap">
 					<img src="assets/images/logo.webp" alt="KM" class="nav-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -26,7 +23,6 @@
 				</span>
 			</a>
 
-			<!-- Desktop nav (md+) -->
 			<div class="nav-desktop">
 				<div class="nav-links">
 					<a href="#about" class="nav-link">About</a>
@@ -35,42 +31,33 @@
 				</div>
 				<button class="nav-lang" onclick="toggleLang()" aria-label="Toggle language">
 					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<circle cx="12" cy="12" r="10"/>
-					<line x1="2" y1="12" x2="22" y2="12"/>
-					<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+						<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+						<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
 					</svg>
 					<span id="lang-label">BS</span>
 				</button>
 				<a href="#contact" class="nav-cta" id="nav-cta">Work with me</a>
 			</div>
 
-			<!-- Mobile controls (< md) -->
 			<div class="nav-mobile-controls">
 				<button class="nav-lang nav-lang-mobile" onclick="toggleLang()" aria-label="Toggle language">
 					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<circle cx="12" cy="12" r="10"/>
-					<line x1="2" y1="12" x2="22" y2="12"/>
-					<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+						<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+						<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
 					</svg>
 					<span id="lang-label-mobile">BS</span>
 				</button>
 				<button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Toggle menu">
-					<!-- Hamburger icon -->
 					<svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-					<line x1="3" y1="6" x2="21" y2="6"/>
-					<line x1="3" y1="12" x2="21" y2="12"/>
-					<line x1="3" y1="18" x2="21" y2="18"/>
+						<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
 					</svg>
-					<!-- X icon -->
 					<svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-					<line x1="18" y1="6" x2="6" y2="18"/>
-					<line x1="6" y1="6" x2="18" y2="18"/>
+						<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
 					</svg>
 				</button>
 			</div>
 		</div>
 
-		<!-- Mobile menu panel -->
 		<div class="nav-mobile-menu glass" id="mobile-menu">
 			<a href="#about" class="nav-mobile-link" onclick="closeMobile()">About</a>
 			<a href="#projects" class="nav-mobile-link" onclick="closeMobile()">Projects</a>
@@ -80,7 +67,6 @@
 	</nav>
 
 	<section class="hero" id="home">
-
 		<div class="hero-dot-bg"></div>
 		<div class="hero-glow hero-glow-1"></div>
 		<div class="hero-glow hero-glow-2"></div>
@@ -93,15 +79,12 @@
 
 			<div class="hero-text" id="hero-text">
 				<p class="hero-tag" id="hero-tag">Web Developer · Electrical Engineering Student</p>
-
 				<h1 class="hero-heading">
 					<span id="hero-l1">Building</span><br>
 					<span class="gradient-text" id="hero-l2">Robust</span><br>
 					<span id="hero-l3">Applications.</span>
 				</h1>
-
-				<p class="hero-sub" id="hero-sub">From Sarajevo — precision, quality, results.</p>
-
+				<p class="hero-sub" id="hero-sub">Based in Sarajevo — precision, quality, results.</p>
 				<div class="hero-buttons">
 					<a href="#contact" class="hero-btn-primary" id="hero-cta">Work with me</a>
 					<a href="#projects" class="hero-btn-secondary" id="hero-projects">View Projects</a>
@@ -109,132 +92,118 @@
 			</div>
 		</div>
 
-		<!-- Scroll indikator -->
 		<a href="#about" class="hero-scroll" id="hero-scroll" aria-label="Scroll down">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<line x1="12" y1="5" x2="12" y2="19"/>
-			<polyline points="19 12 12 19 5 12"/>
+				<line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
 			</svg>
 		</a>
 	</section>
 
-	<!-- ===================== ABOUT ===================== -->
 	<section class="about-section" id="about">
 		<div class="about-container">
-		
 			<div class="about-header fade-up">
-			<p class="section-label">About</p>
-			<h2 class="about-title">Get to <span class="gradient-text">Know Me</span></h2>
+				<p class="section-label" id="about-label">About</p>
+				<h2 class="about-title"><span id="about-title-text">Get to</span> <span class="gradient-text" id="about-title-grad">Know Me</span></h2>
 			</div>
-		
+
 			<div class="about-grid">
-		
-			<!-- Bio kartica -->
-			<div class="bento-card bio-card fade-up">
-				<div class="bio-corner-glow"></div>
-		
-				<div class="bio-header">
-				<div>
-					<h3 class="bio-name">Kemal Mešić</h3>
-					<p class="bio-role">Web Developer</p>
-				</div>
-				<div class="bio-location">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-					</svg>
-					<span>Sarajevo, BiH</span>
-				</div>
-				</div>
-		
-				<p class="bio-text" id="bio-text">
-				I'm a Web Developer and Electrical Engineering student at the
-				<a href="https://etf.unsa.ba" target="_blank" class="bio-highlight">Faculty of Electrical Engineering (ETF), University of Sarajevo</a>.
-				I focus on building scalable, high-performance web applications with modern technologies.
-				My engineering background gives me a systematic approach to problem-solving,
-				ensuring every project is built with precision and purpose.
-				</p>
-		
-				<!-- Education + Work grid -->
-				<div class="bio-cards-grid">
-		
-				<div class="bio-info-card">
-					<div class="bio-info-header">
-					<div class="bio-info-icon bio-info-icon--edu">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
-						</svg>
+				<div class="bento-card bio-card fade-up">
+					<div class="bio-corner-glow"></div>
+					<div class="bio-header">
+						<div>
+							<h3 class="bio-name">Kemal Mešić</h3>
+							<p class="bio-role" id="bio-role">Web Developer</p>
+						</div>
+						<div class="bio-location">
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+							</svg>
+							<span>Sarajevo, BiH</span>
+						</div>
 					</div>
-					<span class="bio-info-label">Education</span>
+
+					<p class="bio-text" id="bio-text">
+						I'm a Web Developer and Electrical Engineering student at the
+						<a href="https://etf.unsa.ba" target="_blank" class="bio-highlight">Faculty of Electrical Engineering (ETF), University of Sarajevo</a>.
+						I focus on building scalable, high-performance web applications with modern technologies.
+						My engineering background gives me a systematic approach to problem-solving,
+						ensuring every project is built with precision and purpose.
+					</p>
+
+					<div class="bio-cards-grid">
+						<div class="bio-info-card">
+							<div class="bio-info-header">
+								<div class="bio-info-icon bio-info-icon--edu">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+									</svg>
+								</div>
+								<span class="bio-info-label" id="edu-label">Education</span>
+							</div>
+							<p class="bio-info-name" id="edu-name">ETF Sarajevo</p>
+							<p class="bio-info-sub" id="edu-sub">Electrical Engineering Student</p>
+						</div>
+
+						<div class="bio-info-card">
+							<div class="bio-info-header">
+								<div class="bio-info-icon bio-info-icon--work">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12"/><path d="M2 12h20"/>
+									</svg>
+								</div>
+								<span class="bio-info-label" id="work-label">Work</span>
+							</div>
+							<p class="bio-info-name" id="work-name">Freelance Web Developer</p>
+							<p class="bio-info-sub" id="work-sub">November 2025 – Present</p>
+						</div>
 					</div>
-					<p class="bio-info-name">ETF Sarajevo</p>
-					<p class="bio-info-sub">Electrical Engineering Student</p>
 				</div>
-		
-				<div class="bio-info-card">
-					<div class="bio-info-header">
-					<div class="bio-info-icon bio-info-icon--work">
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12"/><path d="M2 12h20"/>
-						</svg>
+
+				<div class="bento-card skills-card fade-up">
+					<div class="skills-header">
+						<div class="skills-bar"></div>
+						<h3 class="skills-title" id="skills-title">Skills & Technologies</h3>
 					</div>
-					<span class="bio-info-label">Work</span>
+					<div class="skills-list">
+						<div class="skill-group">
+							<p class="skill-label">Frontend</p>
+							<p class="skill-items">HTML, CSS, JavaScript</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Frameworks</p>
+							<p class="skill-items">ReactJS, NextJS</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Backend</p>
+							<p class="skill-items">PHP, NodeJs</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Database</p>
+							<p class="skill-items">MySQL</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">UI Libraries</p>
+							<p class="skill-items">MUI, Tailwind, Bootstrap</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">SEO & Analytics</p>
+							<p class="skill-items">Google Analytics, Search Console, SEMrush, Google PageSpeed</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Other</p>
+							<p class="skill-items">i18n</p>
+						</div>
 					</div>
-					<p class="bio-info-name">Freelance Web Developer</p>
-					<p class="bio-info-sub">November 2025 – Present</p>
 				</div>
-		
-				</div>
-			</div>
-		
-			<!-- Skills kartica -->
-			<div class="bento-card skills-card fade-up">
-				<div class="skills-header">
-				<div class="skills-bar"></div>
-				<h3 class="skills-title">Skills & Technologies</h3>
-				</div>
-				<div class="skills-list">
-				<div class="skill-group">
-					<p class="skill-label">Frontend</p>
-					<p class="skill-items">HTML, CSS, JavaScript</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">Frameworks</p>
-					<p class="skill-items">ReactJS, NextJS</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">Backend</p>
-					<p class="skill-items">PHP, NodeJs</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">Database</p>
-					<p class="skill-items">MySQL</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">UI Libraries</p>
-					<p class="skill-items">MUI, Tailwind, Bootstrap</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">SEO & Analytics</p>
-					<p class="skill-items">Google Analytics, Search Console, SEMrush, Google PageSpeed</p>
-				</div>
-				<div class="skill-group">
-					<p class="skill-label">Other</p>
-					<p class="skill-items">i18n</p>
-				</div>
-				</div>
-			</div>
-		
 			</div>
 		</div>
 	</section>
 
-	<!-- ===================== PROJECTS ===================== -->
 	<section class="projects-section" id="projects">
 		<div class="projects-container">
-
 			<div class="projects-header fade-up">
-				<p class="section-label">Work</p>
-				<h2 class="projects-title">Featured <span class="gradient-text">Projects</span></h2>
+				<p class="section-label" id="projects-label">Work</p>
+				<h2 class="projects-title"><span id="projects-title-text">Featured</span> <span class="gradient-text" id="projects-title-grad">Projects</span></h2>
 			</div>
 
 			<div class="projects-grid">
@@ -242,26 +211,26 @@
 					<div class="project-thumb">
 						<img src="assets/images/projects/unapirates.webp" alt="Una Pirates Rafting" class="project-img">
 						<div class="project-overlay">
-							<h3 class="project-overlay-title">Una Pirates Rafting</h3>
+							<h3 class="project-overlay-title" id="p1-name-overlay">Una Pirates Rafting</h3>
 							<div class="project-tags">
-							<span class="project-tag">HTML</span>
-							<span class="project-tag">CSS</span>
-							<span class="project-tag">JavaScript</span>
-							<span class="project-tag">PHP</span>
-							<span class="project-tag">MySQL</span>
-							<span class="project-tag">i18n</span>
+								<span class="project-tag">HTML</span>
+								<span class="project-tag">CSS</span>
+								<span class="project-tag">JavaScript</span>
+								<span class="project-tag">PHP</span>
+								<span class="project-tag">MySQL</span>
+								<span class="project-tag">i18n</span>
 							</div>
 							<a href="https://unarafting.ba" target="_blank" rel="noopener noreferrer" class="project-visit">
 							Visit Site
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-							</svg>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+								</svg>
 							</a>
 						</div>
 					</div>
 					<div class="project-info">
-						<h3 class="project-name">Una Pirates Rafting</h3>
-						<p class="project-desc">A full-featured adventure booking platform for rafting on the Una river. Multi-language support, route booking, and accommodation management.</p>
+						<h3 class="project-name" id="p1-name">Una Pirates Rafting</h3>
+						<p class="project-desc" id="p1-desc">A full-featured adventure booking platform for rafting on the Una river. Multi-language support, route booking, and accommodation management.</p>
 					</div>
 				</div>
 
@@ -269,123 +238,114 @@
 					<div class="project-thumb">
 						<img src="assets/images/projects/blackbox.webp" alt="Black Box Bihać" class="project-img">
 						<div class="project-overlay">
-							<h3 class="project-overlay-title">Black Box Bihać</h3>
+							<h3 class="project-overlay-title" id="p2-name-overlay">Black Box Bihać</h3>
 							<div class="project-tags">
-							<span class="project-tag">HTML</span>
-							<span class="project-tag">CSS</span>
-							<span class="project-tag">JavaScript</span>
-							<span class="project-tag">PHP</span>
-							<span class="project-tag">MySQL</span>
+								<span class="project-tag">HTML</span>
+								<span class="project-tag">CSS</span>
+								<span class="project-tag">JavaScript</span>
+								<span class="project-tag">PHP</span>
+								<span class="project-tag">MySQL</span>
 							</div>
 							<a href="https://blackboxbihac.ba" target="_blank" rel="noopener noreferrer" class="project-visit">
 							Visit Site
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-							</svg>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+								</svg>
 							</a>
 						</div>
 					</div>
 					<div class="project-info">
-						<h3 class="project-name">Black Box Bihać</h3>
-						<p class="project-desc">A premium CrossFit gym showcase with dark-mode design, program listings, gallery, and membership registration.</p>
+						<h3 class="project-name" id="p2-name">Black Box Bihać</h3>
+						<p class="project-desc" id="p2-desc">A premium CrossFit gym showcase with dark-mode design, program listings, gallery, and membership registration.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- ===================== CONTACT ===================== -->
 	<section class="contact-section" id="contact">
 		<div class="contact-container">
-
 			<div class="contact-header fade-up">
-			<p class="section-label">Contact</p>
-			<h2 class="contact-title">Let's <span class="gradient-text">Talk</span></h2>
+				<p class="section-label" id="contact-label">Contact</p>
+				<h2 class="contact-title"><span id="contact-title-text">Let's</span> <span class="gradient-text" id="contact-title-grad">Talk</span></h2>
 			</div>
-
 			<div class="contact-grid">
+				<div class="contact-info fade-up">
+					<p class="contact-intro" id="contact-intro">Have a project in mind or want to collaborate? Feel free to reach out — I'd love to hear from you.</p>
 
-			<!-- Lijeva kolona — info -->
-			<div class="contact-info fade-up">
-				<p class="contact-intro">Have a project in mind or want to collaborate? Feel free to reach out — I'd love to hear from you.</p>
+					<div class="contact-links">
+						<a href="tel:+38762541315" class="contact-link">
+							<div class="contact-icon-box">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/>
+								</svg>
+							</div>
+							<div>
+								<p class="contact-link-label" id="phone-label">Phone</p>
+								<p class="contact-link-value">+387 62 541 315</p>
+							</div>
+						</a>
 
-				<div class="contact-links">
-				<a href="tel:+38762546564" class="contact-link">
-					<div class="contact-icon-box">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/>
-					</svg>
+						<a href="mailto:kemalmesic26@gmail.com" class="contact-link">
+							<div class="contact-icon-box">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+								</svg>
+							</div>
+							<div>
+								<p class="contact-link-label" id="email-label">Email</p>
+								<p class="contact-link-value">kemalmesic26@gmail.com</p>
+							</div>
+						</a>
 					</div>
-					<div>
-					<p class="contact-link-label">Phone</p>
-					<p class="contact-link-value">+387 62 546 564</p>
+
+					<div class="contact-socials">
+						<a href="https://github.com/kemalmesic" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+							</svg>
+						</a>
+						<a href="https://linkedin.com/in/kemalmesic" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+							</svg>
+						</a>
 					</div>
-				</a>
-
-				<a href="mailto:kemalmesic26@gmail.com" class="contact-link">
-					<div class="contact-icon-box">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-					</svg>
-					</div>
-					<div>
-					<p class="contact-link-label">Email</p>
-					<p class="contact-link-value">kemalmesic26@gmail.com</p>
-					</div>
-				</a>
 				</div>
 
-				<div class="contact-socials">
-				<a href="https://github.com/kemalmesic" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-					</svg>
-				</a>
-				<a href="https://linkedin.com/in/kemalmesic" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-					</svg>
-				</a>
+				<div class="bento-card contact-form-card fade-up">
+					<form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+						<div class="form-group">
+							<label class="form-label" id="form-name-label" for="form-name">Name</label>
+							<input type="text" id="form-name" class="form-input" placeholder="Your name" required>
+						</div>
+						<div class="form-group">
+							<label class="form-label" id="form-email-label" for="form-email">Email</label>
+							<input type="email" id="form-email" class="form-input" placeholder="your@email.com" required>
+						</div>
+						<div class="form-group">
+							<label class="form-label" id="form-msg-label" for="form-message">Message</label>
+							<textarea id="form-message" class="form-textarea" rows="4" placeholder="Tell me about your project..." required></textarea>
+						</div>
+						<button type="submit" class="form-submit" id="form-submit">
+							<span id="form-submit-text">Send Message</span>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+							</svg>
+						</button>
+					</form>
 				</div>
-			</div>
-
-			<!-- Desna kolona — forma -->
-			<div class="bento-card contact-form-card fade-up">
-				<form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
-				<div class="form-group">
-					<label class="form-label" for="form-name">Name</label>
-					<input type="text" id="form-name" class="form-input" placeholder="Your name" required>
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="form-email">Email</label>
-					<input type="email" id="form-email" class="form-input" placeholder="your@email.com" required>
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="form-message">Message</label>
-					<textarea id="form-message" class="form-textarea" rows="4" placeholder="Tell me about your project..." required></textarea>
-				</div>
-				<button type="submit" class="form-submit" id="form-submit">
-					Send Message
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-					</svg>
-				</button>
-				</form>
-			</div>
-
 			</div>
 		</div>
 	</section>
 
-	<!-- ===================== FOOTER ===================== -->
 	<footer class="footer">
 		<div class="footer-container">
-			<p class="footer-text">© 2026 Kemal Mešić. All rights reserved.</p>
-			<p class="footer-text">Built with <span class="gradient-text footer-built">precision</span>.</p>
+			<p class="footer-text">© 2026 Kemal Mešić. <span id="footer-rights">All rights reserved.</span></p>
+			<p class="footer-text">Built with <span class="gradient-text footer-built" id="footer-built">precision</span>.</p>
 		</div>
 	</footer>
 
-	<!-- ===================== WHATSAPP ===================== -->
 	<a href="https://wa.me/38762541315" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact on WhatsApp">
 		<svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="0">
 			<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
