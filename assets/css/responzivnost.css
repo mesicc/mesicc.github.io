@@ -216,3 +216,9 @@
   .contact-container { padding: 0 8rem; }
   .footer-container  { padding: 0 8rem; }
 }
+/* Bio cards grid — 2 kolone na sm+ */
+@media (min-width: 640px) {
+  .bio-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
