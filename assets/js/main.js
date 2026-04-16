@@ -78,16 +78,16 @@ let currentLang = 'en';
 const i18n = {
   en: {
     langLabel: 'BS', navCta: 'Work with me',
-    heroTag: 'Web Developer · EE Student',
+    heroTag: 'Web Developer · Electrical Engineering Student',
     heroL1: 'Engineering', heroL2: 'Digital', heroL3: 'Experiences.',
-    heroSub: 'Based in Sarajevo, crafting robust web solutions.',
+    heroSub: 'BFrom Sarajevo — precision, quality, results.',
     heroCta: 'Work with me', heroProjects: 'View Projects',
   },
   bs: {
     langLabel: 'EN', navCta: 'Sarađujmo',
-    heroTag: 'Web Developer · Student EE',
-    heroL1: 'Inženjering', heroL2: 'Digitalnih', heroL3: 'Iskustava.',
-    heroSub: 'Iz Sarajeva, kreiram robusna web rješenja.',
+    heroTag: 'Web Developer · Student Elektrotehnike',
+    heroL1: 'Razvoj', heroL2: 'Pouzdanih', heroL3: 'Aplikacija.',
+    heroSub: 'Iz Sarajeva — preciznost, kvalitet, rezultati.',
     heroCta: 'Sarađujmo', heroProjects: 'Pogledaj projekte',
   }
 };
