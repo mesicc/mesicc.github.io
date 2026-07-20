@@ -1,0 +1,256 @@
+/* =========================================================
+   HERO SEKCIJA — Kemal Mešić
+   style.css — osnovni izgled (bez media querija, vidi responsive.css)
+   ========================================================= */
+
+:root {
+  --bg: #0d0d0f;
+  --text: #f2f1ef;
+  --text-muted: #a3a2ad;
+
+  --accent-green: #4ade80;
+  --accent-orange: #f2a35f;
+  --accent-pink: #ec5fa8;
+  --accent-purple: #9b6bf2;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --border: #26262c;
+  --nav-height: 84px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Navigacija ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 15, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: var(--nav-height);
+  padding-inline: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav__link {
+  font-size: 15px;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--text);
+}
+
+/* Hamburger dugme — sakriveno na desktopu, prikazano u responsive.css ispod 900px */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Animacija hamburgera u "X" kada je meni otvoren */
+.nav__toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Hero container ---------- */
+.hero {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 64px clamp(24px, 8vw, 300px) 72px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Avatar ---------- */
+.hero__avatar {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(
+    from 180deg,
+    var(--accent-orange),
+    var(--accent-pink),
+    var(--accent-purple),
+    var(--accent-orange)
+  );
+}
+
+.hero__avatar img,
+.hero__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1f;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---------- Tekst ---------- */
+.hero__text {
+  flex: 1 1 420px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero__heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__heading-bold {
+  font-weight: 700;
+}
+
+.hero__heading-normal {
+  font-weight: 400;
+}
+
+.hero__heading-row {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ---------- Badge "Open to work" ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-green);
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.18);
+}
+
+/* ---------- Meta info (lokacija, linkovi) ---------- */
+.hero__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.hero__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__meta-icon {
+  font-size: 17px;
+}
+
+.hero__meta-link {
+  transition: color var(--transition);
+}
+
+.hero__meta-link:hover {
+  color: var(--text);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}

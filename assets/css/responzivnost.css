@@ -1,0 +1,108 @@
+/* =========================================================
+   HERO SEKCIJA — Kemal Mešić
+   responsive.css — svi media queryji odvojeni od style.css
+   ========================================================= */
+
+/* ---------- Do 900px: hamburger meni + centriranje hero-a ---------- */
+@media (max-width: 900px) {
+  :root {
+    --nav-height: 72px;
+  }
+
+  .nav__inner {
+    padding-inline: 24px;
+  }
+
+  /* Meni se sakriva u padajuću listu, otvara preko JS-a (klasa .is-open) */
+  .nav__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 24px 20px;
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav__links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav__link {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__link:last-child {
+    border-bottom: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding: 64px 40px 72px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__heading {
+    font-size: 26px;
+    align-items: center;
+  }
+
+  .hero__heading-row {
+    justify-content: center;
+  }
+
+  .hero__meta {
+    justify-content: center;
+  }
+}
+
+/* ---------- Do 560px: manji avatar i tipografija na telefonima ---------- */
+@media (max-width: 560px) {
+  .hero {
+    padding: 48px 24px 56px;
+    gap: 24px;
+  }
+
+  .hero__avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero__avatar-placeholder {
+    font-size: 36px;
+  }
+
+  .hero__heading {
+    font-size: 22px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .hero__meta {
+    flex-direction: column;
+    gap: 14px;
+    font-size: 15px;
+  }
+}
