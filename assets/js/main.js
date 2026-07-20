@@ -1,55 +1,65 @@
 /* =========================================================
-   HERO SEKCIJA — Kemal Mešić
-   script.js — hamburger meni (otvaranje/zatvaranje na mobilnom)
+   KEMAL MEŠIĆ — PORTFOLIO
+   main.js — hamburger meni + fallback za slike projekata
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  /* ---------- Hamburger meni (mobilni/tablet) ---------- */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-  if (!navToggle || !navLinks) return;
+  const openMenu = () => {
+    mobileMenu.classList.add('open');
+    mobileBackdrop.classList.add('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  };
 
   const closeMenu = () => {
-    navLinks.classList.remove('is-open');
-    navToggle.classList.remove('is-active');
-    navToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileBackdrop.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
   };
 
-  const toggleMenu = () => {
-    const isOpen = navLinks.classList.toggle('is-open');
-    navToggle.classList.toggle('is-active', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  };
+  if (hamburgerBtn && mobileMenu && mobileBackdrop) {
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
 
-  // Klik na hamburger dugme otvara/zatvara meni
-  navToggle.addEventListener('click', toggleMenu);
+    mobileMenuClose.addEventListener('click', closeMenu);
+    mobileBackdrop.addEventListener('click', closeMenu);
 
-  // Klik na bilo koji link zatvara meni (korisno na mobilnom)
-  navLinks.querySelectorAll('.nav__link').forEach((link) => {
-    link.addEventListener('click', closeMenu);
-  });
+    // Zatvori meni klikom na bilo koji link
+    mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
 
-  // Zatvori meni ako se ekran vrati na desktop širinu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
-      closeMenu();
-    }
-  });
+    // Zatvori meni na Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
 
-  // Zatvori meni na klik van njega
-  document.addEventListener('click', (e) => {
-    const isClickInside = navLinks.contains(e.target) || navToggle.contains(e.target);
-    if (!isClickInside && navLinks.classList.contains('is-open')) {
-      closeMenu();
-    }
-  });
+    // Zatvori meni ako se prozor vrati na desktop širinu
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1200) closeMenu();
+    });
+  }
 
-  // Zatvori meni na taster Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
-      closeMenu();
-    }
+  /* ---------- Fallback za slike projekata koje još nisu dodate ----------
+     Dok ne dodaš prave screenshotove (assets/project-*.png), umesto
+     slomljene slike prikazuje se uredan placeholder sa naslovom projekta. */
+  document.querySelectorAll('.project__image').forEach((img) => {
+    img.addEventListener('error', () => {
+      const title = img.closest('.project')?.querySelector('.project__title')?.textContent || 'COMING SOON';
+      const placeholder = document.createElement('div');
+      placeholder.className = 'project__image project__image--fallback';
+      placeholder.style.height = img.offsetHeight ? img.offsetHeight + 'px' : '220px';
+      placeholder.textContent = title;
+      img.replaceWith(placeholder);
+    }, { once: true });
   });
 
 });

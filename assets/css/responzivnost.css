@@ -1,108 +1,92 @@
 /* =========================================================
-   HERO SEKCIJA — Kemal Mešić
+   KEMAL MEŠIĆ — PORTFOLIO
    responsive.css — svi media queryji odvojeni od style.css
    ========================================================= */
 
-/* ---------- Do 900px: hamburger meni + centriranje hero-a ---------- */
-@media (max-width: 900px) {
-  :root {
-    --nav-height: 72px;
+/* ---------- Do 1200px: hamburger meni umesto desktop navigacije ---------- */
+@media (max-width: 1200px) {
+  .site-header {
+    padding: 24px 40px;
   }
 
-  .nav__inner {
-    padding-inline: 24px;
+  .desktop-nav {
+    display: none;
   }
 
-  /* Meni se sakriva u padajuću listu, otvara preko JS-a (klasa .is-open) */
-  .nav__links {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 8px 24px 20px;
-    transform: translateY(-12px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  }
-
-  .nav__links.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .nav__link {
-    width: 100%;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav__link:last-child {
-    border-bottom: none;
-  }
-
-  .nav__toggle {
+  .hamburger-btn {
     display: flex;
+  }
+}
+
+/* Iznad 1200px meni na mobilnom mora biti sakriven bez obzira na stanje */
+@media (min-width: 1201px) {
+  .mobile-menu,
+  .mobile-backdrop {
+    display: none !important;
+  }
+}
+
+/* ---------- Do 900px: centriranje hero-a, 1 kolona za grid-ove ---------- */
+@media (max-width: 900px) {
+  .section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .projects-grid,
+  .tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-heading {
+    font-size: 26px;
   }
 
   .hero {
-    padding: 64px 40px 72px;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
-  .hero__heading {
-    font-size: 26px;
-    align-items: center;
-  }
-
-  .hero__heading-row {
+  .hero-heading__row {
     justify-content: center;
   }
 
-  .hero__meta {
+  .hero-meta {
     justify-content: center;
   }
 }
 
-/* ---------- Do 560px: manji avatar i tipografija na telefonima ---------- */
+/* ---------- Do 560px: manji tech grid, sitniji detalji ---------- */
 @media (max-width: 560px) {
-  .hero {
-    padding: 48px 24px 56px;
-    gap: 24px;
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .hero__avatar {
+  .hero-photo {
     width: 160px;
     height: 160px;
   }
 
-  .hero__avatar-placeholder {
-    font-size: 36px;
-  }
-
-  .hero__heading {
+  .hero-heading {
     font-size: 22px;
   }
 
   .badge {
-    font-size: 13px;
-    padding: 6px 14px;
+    font-size: 11px;
+    padding: 4px 10px;
   }
 
-  .hero__meta {
-    flex-direction: column;
-    gap: 14px;
-    font-size: 15px;
+  .project__title {
+    font-size: 19px;
+  }
+
+  .whatsapp-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
+    right: 20px;
   }
 }
