@@ -239,6 +239,9 @@ function applyLang(lang) {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
 
+  const flag = document.getElementById('langFlag');
+  if (flag) flag.className = 'flag flag-' + lang;
+
   document.documentElement.lang = lang;
   updateMeta(s, lang);
   renderProjects(lang);
