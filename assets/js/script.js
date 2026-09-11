@@ -47,7 +47,7 @@ const TAGS = {
 /* ---------- Project data (images + links + tags) ---------- */
 const PROJECTS = [
   {
-    img: 'assets/project-coming-soon.webp',
+    img: 'assets/images/project-coming-soon.webp',
     w: 900,
     h: 551,
     repo: '#',
@@ -55,7 +55,7 @@ const PROJECTS = [
     tags: [TAGS.react, TAGS.ts, TAGS.tw],
   },
   {
-    img: 'assets/project-blackbox.webp',
+    img: 'assets/images/project-blackbox.webp',
     w: 900,
     h: 508,
     repo: '#',
@@ -63,7 +63,7 @@ const PROJECTS = [
     tags: [TAGS.next, TAGS.mysql, TAGS.sass],
   },
   {
-    img: 'assets/project-unaavant.webp',
+    img: 'assets/images/project-unaavant.webp',
     w: 900,
     h: 507,
     repo: '#',
@@ -71,7 +71,7 @@ const PROJECTS = [
     tags: [TAGS.react, TAGS.html, TAGS.css],
   },
   {
-    img: 'assets/project-unapirates.webp',
+    img: 'assets/images/project-unapirates.webp',
     w: 900,
     h: 508,
     repo: '#',
