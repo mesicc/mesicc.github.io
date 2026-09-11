@@ -5,7 +5,7 @@
 
 /* ---------- Icons ---------- */
 const CSS_ICON =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231572B6' d='M1.5 0h21l-1.91 21.56L11.99 24l-8.56-2.44L1.5 0zm17.09 4.41H5.41l.24 2.66h10.5l-.24 2.66H8.62l.23 2.6h6.66l-.4 4.36-3.11.84-3.11-.84-.21-2.39H6.02l.42 4.72 5.56 1.54 5.57-1.54.76-8.48.26-2.67.4-4.46z'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%3E%3Cpath%20fill=%22%231572B6%22%20d=%22M1.5%200h21l-1.91%2021.56L11.99%2024l-8.56-2.44L1.5%200zm17.09%204.41H5.41l.24%202.66h10.5l-.24%202.66H8.62l.23%202.6h6.66l-.4%204.36-3.11.84-3.11-.84-.21-2.39H6.02l.42%204.72%205.56%201.54%205.57-1.54.76-8.48.26-2.67.4-4.46z%22/%3E%3C/svg%3E";
 
 const ICONS = {
   react: 'https://cdn.simpleicons.org/react',
@@ -16,6 +16,7 @@ const ICONS = {
   html: 'https://cdn.simpleicons.org/html5',
   css: CSS_ICON,
   sass: 'https://cdn.simpleicons.org/sass',
+  php: 'https://cdn.simpleicons.org/php',
   mysql: 'https://cdn.simpleicons.org/mysql',
 };
 
@@ -29,6 +30,7 @@ const TECH = [
   { name: 'HTML', icon: ICONS.html },
   { name: 'CSS', icon: ICONS.css },
   { name: 'SCSS', icon: ICONS.sass },
+  { name: 'PHP', icon: ICONS.php },
   { name: 'MySQL', icon: ICONS.mysql },
 ];
 
@@ -36,8 +38,10 @@ const TECH = [
 const TAGS = {
   react: { name: 'React', bg: '#0b2a3a', icon: ICONS.react },
   next: { name: 'Next JS', bg: '#1a1a1a', icon: ICONS.next },
+  js: { name: 'JavaScript', bg: '#2e2a12', icon: ICONS.js },
   ts: { name: 'TypeScript', bg: '#0f2540', icon: ICONS.ts },
   tw: { name: 'Tailwind', bg: '#0f2f36', icon: ICONS.tw },
+  php: { name: 'PHP', bg: '#1b1c2e', icon: ICONS.php },
   mysql: { name: 'MySQL', bg: '#10222a', icon: ICONS.mysql },
   sass: { name: 'SCSS', bg: '#2a1330', icon: ICONS.sass },
   html: { name: 'HTML', bg: '#3a1a10', icon: ICONS.html },
@@ -47,32 +51,32 @@ const TAGS = {
 /* ---------- Project data (images + links + tags) ---------- */
 const PROJECTS = [
   {
-    img: 'assets/images/project-coming-soon.webp',
+    img: 'assets/images/project-veseli-fit.webp',
     w: 900,
-    h: 551,
-    repo: '#',
-    tags: [TAGS.react, TAGS.ts, TAGS.tw],
-  },
-  {
-    img: 'assets/images/project-blackbox.webp',
-    w: 900,
-    h: 508,
-    repo: '#',
-    tags: [TAGS.next, TAGS.mysql, TAGS.sass],
+    h: 499,
+    repo: 'https://veseli.fit',
+    tags: [TAGS.html, TAGS.css, TAGS.js],
   },
   {
     img: 'assets/images/project-unaavant.webp',
     w: 900,
     h: 507,
-    repo: '#',
-    tags: [TAGS.react, TAGS.html, TAGS.css],
+    repo: 'https://raftingbihac.ba',
+    tags: [TAGS.html, TAGS.css, TAGS.js, TAGS.php, TAGS.mysql],
   },
   {
     img: 'assets/images/project-unapirates.webp',
     w: 900,
     h: 508,
+    repo: 'https://unapiratesrafting.com',
+    tags: [TAGS.html, TAGS.css, TAGS.js, TAGS.php, TAGS.mysql],
+  },
+  {
+    img: 'assets/images/project-blackbox.webp',
+    w: 900,
+    h: 505,
     repo: '#',
-    tags: [TAGS.next, TAGS.ts, TAGS.mysql],
+    tags: [TAGS.html, TAGS.css, TAGS.js, TAGS.php, TAGS.mysql],
   },
 ];
 
@@ -100,20 +104,20 @@ const STRINGS = {
       'Full Stack Developer from Sarajevo, Bosnia and Herzegovina. I build fast, well-designed web apps with React, Next.js, TypeScript, Tailwind and MySQL.',
     projects: [
       {
-        title: 'COMING SOON',
-        desc: 'A landing page announcing a new project — a minimal design focused on the brand and the upcoming launch.',
+        title: 'VESELI FIT',
+        desc: 'A website for a personal trainer from Banja Luka — training programs, client transformations and online purchase of a coaching plan.',
+      },
+      {
+        title: 'UNA AVANT RAFTING',
+        desc: 'A web app for a rafting agency — full offer and online booking. The admin gets a complete overview, and clients receive an automated thank-you email after the trip.',
+      },
+      {
+        title: 'UNA PIRATES RAFTING',
+        desc: 'A web app for a rafting agency — bookings, a gallery and a 2D route map. The admin panel gives monthly and yearly revenue reports, and clients get a thank-you email after the trip.',
       },
       {
         title: 'BLACKBOX BIHAĆ',
-        desc: 'A website for a CrossFit and fitness gym — program overview, the team, and training sign-ups.',
-      },
-      {
-        title: 'UNAAVANT',
-        desc: 'A site for a rafting agency on the Una river — routes, skippers, gallery and online booking.',
-      },
-      {
-        title: 'RAFTING ON THE UNA — UNA PIRATES',
-        desc: 'A website for the Una Pirates rafting agency — routes, team-building packages and online reservations.',
+        desc: 'A web app for a gym — member sign-up and class booking, plus an admin panel for revenue, attendance and goals. Home page with locations, contacts and a gallery.',
       },
     ],
   },
@@ -139,20 +143,20 @@ const STRINGS = {
       'Full Stack Developer iz Sarajeva, Bosna i Hercegovina. Gradim brze i dobro dizajnirane web aplikacije s React, Next.js, TypeScript, Tailwind i MySQL.',
     projects: [
       {
-        title: 'COMING SOON',
-        desc: 'Landing stranica za najavu novog projekta — minimalan dizajn u fokusu na brend i najavu lansiranja.',
+        title: 'VESELI FIT',
+        desc: 'Web stranica za personalnog trenera iz Banje Luke — programi treninga, transformacije klijenata i online narudžba plana.',
+      },
+      {
+        title: 'UNA AVANT RAFTING',
+        desc: 'Web aplikacija za rafting agenciju — kompletna ponuda i online rezervacija. Admin ima puni pregled, a nakon ture klijentu automatski stiže zahvalnica na mail.',
+      },
+      {
+        title: 'UNA PIRATES RAFTING',
+        desc: 'Web aplikacija za rafting agenciju — rezervacije, galerija i 2D mapa ruta. Admin panel daje mjesečne i godišnje izvještaje o zaradi, a klijentu nakon ture ide zahvalnica na mail.',
       },
       {
         title: 'BLACKBOX BIHAĆ',
-        desc: 'Web stranica za CrossFit i fitness teretanu — prezentacija programa, tim i prijava na treninge.',
-      },
-      {
-        title: 'UNAAVANT',
-        desc: 'Stranica za rafting agenciju na rijeci Uni — rute, skiperi, galerija i online rezervacije.',
-      },
-      {
-        title: 'RAFTING NA UNI — UNA PIRATES',
-        desc: 'Web stranica za rafting agenciju Una Pirates — rute, team building ponuda i online rezervacija.',
+        desc: 'Web aplikacija za teretanu — prijava članova i rezervacija termina, uz admin panel za zaradu, prisustvo i ciljeve. Na početnoj su lokacije, kontakti i galerija.',
       },
     ],
   },
@@ -183,7 +187,7 @@ function renderProjects(lang) {
       .map(
         (t) => `
         <span class="tag" style="background:${t.bg}">
-          <i style="background-image:url(${t.icon})"></i>${t.name}
+          <i style="background-image:url(&quot;${t.icon}&quot;)"></i>${t.name}
         </span>`
       )
       .join('');
