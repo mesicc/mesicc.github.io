@@ -101,6 +101,9 @@ const STRINGS = {
     aboutText:
       'My name is Kemal Mešić, a Full Stack Developer based in Sarajevo. I work as a freelancer, building fast and well-designed web applications with React, Next.js, TypeScript and Tailwind. I enjoy taking projects from the first idea all the way to a finished product.',
     contactTagline: "Let's build something together.",
+    contactHeading: 'Contact',
+    metaDescription:
+      'Full Stack Developer from Sarajevo, Bosnia and Herzegovina. I build fast, well-designed web apps with React, Next.js, TypeScript, Tailwind and MySQL.',
     projects: [
       {
         title: 'COMING SOON',
@@ -139,6 +142,9 @@ const STRINGS = {
     aboutText:
       'Zovem se Kemal Mešić, Full Stack Developer iz Sarajeva. Radim kao freelancer, gradim brze i dobro dizajnirane web aplikacije koristeći React, Next.js, TypeScript i Tailwind. Volim raditi na projektima od ideje do gotovog proizvoda.',
     contactTagline: 'Napravimo nešto zajedno.',
+    contactHeading: 'Kontakt',
+    metaDescription:
+      'Full Stack Developer iz Sarajeva, Bosna i Hercegovina. Gradim brze i dobro dizajnirane web aplikacije s React, Next.js, TypeScript, Tailwind i MySQL.',
     projects: [
       {
         title: 'COMING SOON',
@@ -213,6 +219,20 @@ function renderProjects(lang) {
   }).join('');
 }
 
+/* ---------- SEO meta (drzi opise u skladu s jezikom) ---------- */
+function updateMeta(s, lang) {
+  const set = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  };
+
+  set('meta[name="description"]', s.metaDescription);
+  set('meta[property="og:description"]', s.metaDescription);
+  set('meta[name="twitter:description"]', s.metaDescription);
+  set('meta[property="og:locale"]', lang === 'bs' ? 'bs_BA' : 'en_US');
+  set('meta[property="og:locale:alternate"]', lang === 'bs' ? 'en_US' : 'bs_BA');
+}
+
 /* ---------- Language ---------- */
 function applyLang(lang) {
   const s = STRINGS[lang] || STRINGS.en;
@@ -227,6 +247,7 @@ function applyLang(lang) {
   });
 
   document.documentElement.lang = lang;
+  updateMeta(s, lang);
   renderProjects(lang);
 
   try {
