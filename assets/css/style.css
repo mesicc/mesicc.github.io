@@ -337,6 +337,14 @@ a:hover { color: var(--accent); }
   border-radius: 12px;
   display: block;
 }
+.project-media-link {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.project-media-link img { transition: transform 0.35s ease; }
+.project-media-link:hover img { transform: scale(1.03); }
+
 .project-link {
   position: absolute;
   top: -18px;

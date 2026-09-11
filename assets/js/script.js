@@ -75,7 +75,7 @@ const PROJECTS = [
     img: 'assets/images/project-blackbox.webp',
     w: 900,
     h: 505,
-    repo: '#',
+    repo: 'https://blackboxbihac.ba/',
     tags: [TAGS.html, TAGS.css, TAGS.js, TAGS.php, TAGS.mysql],
   },
 ];
@@ -192,11 +192,18 @@ function renderProjects(lang) {
       )
       .join('');
 
+    // Projekti bez linka (repo: '#') ostaju bez klika - da se ne otvara prazan tab.
+    const url = p.repo && p.repo !== '#' ? p.repo : null;
+    const img = `<img src="${p.img}" alt="${copy.title}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async">`;
+    const media = url
+      ? `<a class="project-media-link" href="${url}" target="_blank" rel="noopener">${img}</a>
+          <a class="project-link" href="${url}" target="_blank" rel="noopener" aria-label="${copy.title}">${EXTERNAL_SVG}</a>`
+      : img;
+
     return `
       <div class="project">
         <div class="project-media">
-          <img src="${p.img}" alt="${copy.title}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async">
-          <a class="project-link" href="${p.repo}" target="_blank" rel="noopener">${EXTERNAL_SVG}</a>
+          ${media}
         </div>
         <h3 class="project-title">${copy.title}</h3>
         <p class="project-desc">${copy.desc}</p>
