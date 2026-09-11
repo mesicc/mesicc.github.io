@@ -51,7 +51,6 @@ const PROJECTS = [
     w: 900,
     h: 551,
     repo: '#',
-    video: '#',
     tags: [TAGS.react, TAGS.ts, TAGS.tw],
   },
   {
@@ -59,7 +58,6 @@ const PROJECTS = [
     w: 900,
     h: 508,
     repo: '#',
-    video: '#',
     tags: [TAGS.next, TAGS.mysql, TAGS.sass],
   },
   {
@@ -67,7 +65,6 @@ const PROJECTS = [
     w: 900,
     h: 507,
     repo: '#',
-    video: '#',
     tags: [TAGS.react, TAGS.html, TAGS.css],
   },
   {
@@ -75,7 +72,6 @@ const PROJECTS = [
     w: 900,
     h: 508,
     repo: '#',
-    video: '#',
     tags: [TAGS.next, TAGS.ts, TAGS.mysql],
   },
 ];
@@ -96,8 +92,6 @@ const STRINGS = {
     projectsHeading: 'PROJECTS',
     techHeading: 'TECH STACK',
     aboutHeading: 'ABOUT ME',
-    sourceCode: 'SOURCE CODE',
-    watchVideo: 'WATCH VIDEO',
     aboutText:
       'My name is Kemal Mešić, a Full Stack Developer based in Sarajevo. I work as a freelancer, building fast and well-designed web applications with React, Next.js, TypeScript and Tailwind. I enjoy taking projects from the first idea all the way to a finished product.',
     contactTagline: "Let's build something together.",
@@ -137,8 +131,6 @@ const STRINGS = {
     projectsHeading: 'PROJEKTI',
     techHeading: 'TEHNOLOGIJE',
     aboutHeading: 'O MENI',
-    sourceCode: 'IZVORNI KOD',
-    watchVideo: 'POGLEDAJ VIDEO',
     aboutText:
       'Zovem se Kemal Mešić, Full Stack Developer iz Sarajeva. Radim kao freelancer, gradim brze i dobro dizajnirane web aplikacije koristeći React, Next.js, TypeScript i Tailwind. Volim raditi na projektima od ideje do gotovog proizvoda.',
     contactTagline: 'Napravimo nešto zajedno.',
@@ -165,12 +157,6 @@ const STRINGS = {
     ],
   },
 };
-
-const GITHUB_SVG =
-  '<svg width="16" height="16" viewBox="0 0 24 24" fill="#ededed"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.81-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>';
-
-const PLAY_SVG =
-  '<svg width="16" height="16" viewBox="0 0 24 24" fill="#ededed"><path d="M8 5v14l11-7z"/></svg>';
 
 const EXTERNAL_SVG =
   '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ededed" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>';
@@ -211,10 +197,6 @@ function renderProjects(lang) {
         <h3 class="project-title">${copy.title}</h3>
         <p class="project-desc">${copy.desc}</p>
         <div class="project-tags">${tags}</div>
-        <div class="project-actions">
-          <a class="btn" href="${p.repo}" target="_blank" rel="noopener">${GITHUB_SVG}${s.sourceCode}</a>
-          <a class="btn" href="${p.video}" target="_blank" rel="noopener">${PLAY_SVG}${s.watchVideo}</a>
-        </div>
       </div>`;
   }).join('');
 }
