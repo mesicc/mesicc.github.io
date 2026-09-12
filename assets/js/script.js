@@ -97,7 +97,7 @@ const STRINGS = {
     techHeading: 'TECH STACK',
     aboutHeading: 'ABOUT ME',
     aboutText:
-      'My name is Kemal Mešić, a Full Stack Developer based in Sarajevo. I work as a freelancer, building fast and well-designed web applications with React, Next.js, TypeScript and Tailwind. I enjoy taking projects from the first idea all the way to a finished product.',
+      "I'm Kemal Mešić, a full stack developer based in Sarajevo. I build and ship complete web applications for real clients. Alongside that I'm studying Computing and Informatics at the Faculty of Electrical Engineering, University of Sarajevo — theory only clicks for me once I've seen it running in production.",
     contactTagline: "Let's build something together.",
     contactHeading: 'Contact',
     metaDescription:
@@ -136,7 +136,7 @@ const STRINGS = {
     techHeading: 'TEHNOLOGIJE',
     aboutHeading: 'O MENI',
     aboutText:
-      'Zovem se Kemal Mešić, Full Stack Developer iz Sarajeva. Radim kao freelancer, gradim brze i dobro dizajnirane web aplikacije koristeći React, Next.js, TypeScript i Tailwind. Volim raditi na projektima od ideje do gotovog proizvoda.',
+      'Ja sam Kemal Mešić, full stack developer iz Sarajeva. Gradim i puštam u rad kompletne web aplikacije za stvarne klijente. Paralelno studiram Računarstvo i informatiku na Elektrotehničkom fakultetu Univerziteta u Sarajevu — teorija mi ima smisla tek kad je vidim u produkciji.',
     contactTagline: 'Napravimo nešto zajedno.',
     contactHeading: 'Kontakt',
     metaDescription:
