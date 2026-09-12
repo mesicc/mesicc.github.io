@@ -317,7 +317,21 @@ function initNav() {
   });
 }
 
+/* ---------- Fiksiran header ---------- */
+function initHeader() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // stanje odmah, za slucaj da je stranica ucitana vec skrolana
+}
+
 /* ---------- Init ---------- */
 renderTech();
 initNav();
 initLang();
+initHeader();
