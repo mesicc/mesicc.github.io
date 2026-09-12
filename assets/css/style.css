@@ -21,6 +21,7 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   min-height: 100vh;
   min-height: 100dvh;
+  overflow-wrap: break-word;
 }
 
 img, svg { max-width: 100%; }
@@ -196,7 +197,9 @@ a:hover { color: var(--accent); }
   display: flex;
   flex-direction: column;
   padding: 32px 28px;
-  gap: 22px;
+  padding-right: calc(28px + env(safe-area-inset-right, 0px));
+  padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+  gap: 12px;
   overflow-y: auto;
 }
 .mobile-menu.open { transform: translateX(0); }
@@ -206,6 +209,7 @@ a:hover { color: var(--accent); }
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
+  padding: 13px 0;
 }
 
 .close-btn {
@@ -242,6 +246,7 @@ a:hover { color: var(--accent); }
   border: 1px solid var(--border);
   border-radius: 100px;
   padding: 9px 0;
+  min-height: 44px;
   color: var(--ink);
   font-family: inherit;
   font-size: 13px;
@@ -490,8 +495,8 @@ a:hover { color: var(--accent); }
 /* ---------- WhatsApp button ---------- */
 .wa-btn {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+  right: calc(32px + env(safe-area-inset-right, 0px));
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -535,14 +540,47 @@ a:hover { color: var(--accent); }
 }
 
 @media (max-width: 700px) {
-  :root { --pad: 24px; }
+  /* max() drzi 24px na obicnom ekranu, a u landscape-u sklanja sadrzaj
+     ispod zareza. env() uvijek s fallbackom - bez njega pada cijela deklaracija. */
+  :root {
+    --pad: max(24px, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  }
 }
 
 @media (max-width: 560px) {
   .tech-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .project-title { font-size: 18px; }
   .project-desc { font-size: 15px; }
-  .wa-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+
+  .wa-btn {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    width: 52px;
+    height: 52px;
+  }
+
+  .projects-grid { gap: 40px; }
+
+  /* manji okvir -> sira slika, i strelica se odmakne od ivice ekrana */
+  .project-media { padding: 14px; }
+  .project-link {
+    top: -12px;
+    right: -12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* pet tagova je na 375px islo u tri reda - sada stanu u dva */
+  .project-tags { gap: 8px; }
+  .tag {
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .tag i { width: 14px; height: 14px; }
+
+  /* prostor da lebdece WhatsApp dugme ne prekrije copyright */
+  #contact { padding-bottom: 104px; }
 }
 
 @media (max-width: 400px) {
