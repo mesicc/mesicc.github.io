@@ -324,12 +324,19 @@ a:hover { color: var(--accent); }
 
 .hero-meta {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.hero-social {
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   column-gap: 20px;
   row-gap: 8px;
-  font-size: 14px;
-  color: var(--ink-muted);
 }
 .hero-meta .meta-item {
   display: flex;
@@ -534,7 +541,7 @@ a:hover { color: var(--accent); }
 @media (max-width: 820px) {
   .hero { flex-direction: column; align-items: center; text-align: center; }
   .hero-text { flex: 0 1 auto; width: 100%; margin-left: 0; }
-  .hero-meta { justify-content: center; }
+  .hero-meta { align-items: center; }
   .hero-line-2 { justify-content: center; }
   .tech-grid { grid-template-columns: repeat(3, 1fr); }
 }
